@@ -20,6 +20,11 @@ import imutils
 import time
 import dlib
 import cv2
+#
+# import firebase_admin
+# from firebase_admin import credentials
+# from firebase_admin import firestore
+
 
 # construct the argument parse and parse the arguments
 ap = argparse.ArgumentParser()
@@ -186,6 +191,8 @@ while True:
             # add the bounding box coordinates to the rectangles list
             rects.append((startX, startY, endX, endY))
 
+
+
     # draw a horizontal line in the center of the frame -- once an
     # object crosses this line we will determine whether they were
     # moving 'up' or 'down'
@@ -216,6 +223,7 @@ while True:
             direction = centroid[1] - np.mean(y)
             to.centroids.append(centroid)
 
+            # TODO change this to suit all directions
             # check to see if the object has been counted or not
             if not to.counted:
                 # if the direction is negative (indicating the object
