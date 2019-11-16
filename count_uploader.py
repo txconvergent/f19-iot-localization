@@ -2,25 +2,24 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
 
-cred = credentials.Certificate("./ServiceAccountKey.json")
+service_key = "./ServiceAccountKey.json"
+
+# todo put this somewhere else?
+cred = credentials.Certificate(service_key)
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
-doc_ref = db.collection(u'roomPop1').document(u'entered')
-
 users_ref = db.collection(u'roomPop1')
+doc_ref = users_ref.document(u'entered')
 
-while True:
 
-    try:
-        doc_ref.set({
-            u'numb': int(input("Enter a number to send to database: "))
-        })
+def upload(n: int):
+    doc_ref.set({
+        u'numb': n
+    })
 
-    except:
-        print("please enter a number")
-        continue
 
+def print_db():
     docs = users_ref.stream()
 
     for doc in docs:
