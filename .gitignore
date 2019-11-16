@@ -2,3 +2,4 @@
 /output/
 /videos/
 /ServiceAccountKey.json
+*.pyc
