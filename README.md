@@ -8,6 +8,8 @@ Prerequisites:
 3. *Extras:* Need to install [dlib](http://dlib.net/)
 4. Dlib requires [CMake](https://cmake.org/download/). You can check proper installation using `cmake --version`
  
+ Or run `pip install -r requirements.txt`
+ 
  What to enter into CLI:
 
  `python people_counter.py --prototxt mobilenet_ssd/MobileNetSSD_deploy.prototxt --model mobilenet_ssd/MobileNetSSD_deploy.caffemodel`
