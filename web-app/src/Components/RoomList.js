@@ -61,7 +61,7 @@ function RoomList() {
                     </CardContent>
                 </Card>
             )}
-            <Typography align='center'>Wow, a fake graph</Typography>
+            <Typography align='center'>Graph</Typography>
 
             <Card align='center'>
             <VictoryChart style={{ parent: { maxWidth: "50%" }}}>
