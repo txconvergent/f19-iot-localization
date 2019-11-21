@@ -232,6 +232,9 @@ while True:
                 if direction < 0 and centroid[1] < H // 2:
                     totalUp += 1
                     to.counted = True
+                    # upload to database
+                    uploader.upload(len(trackers))
+                    uploader.print_db()
 
                 # if the direction is positive (indicating the object
                 # is moving down) AND the centroid is below the
@@ -239,6 +242,9 @@ while True:
                 elif direction > 0 and centroid[1] > H // 2:
                     totalDown += 1
                     to.counted = True
+                    # upload to database
+                    uploader.upload(len(trackers))
+                    uploader.print_db()
 
             # to.counted = True
 
@@ -265,10 +271,6 @@ while True:
         text = "{}: {}".format(k, v)
         cv2.putText(frame, text, (10, H - ((i * 20) + 20)),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 2)
-
-    # upload to database
-    uploader.upload(len(trackers))
-    uploader.print_db()
 
     # check to see if we should write the frame to disk
     if writer is not None:
