@@ -13,7 +13,7 @@ function useRooms() {
     useEffect(() => {
         firebase
             .firestore()
-            .collection('roomPop1')
+            .collection('rooms')
             .onSnapshot((snapshot) => {
                 const newRooms = snapshot.docs.map((room) => ({
                     id: room.id,
@@ -26,29 +26,9 @@ function useRooms() {
     return rooms
 }
 
-function useData() {
-    const [data,setData] = useState([{time: new Date().getHours(), pop:0}]);
-    
-    useEffect(() => {
-        firebase
-            .firestore()
-            .collection('roomPop1')
-            .onSnapshot((snapshot) => {
-                const newData = snapshot.docs.map((room) => (
-                    data.push({time:new Date().getHours(),pop:room.numb})
-                ))
-                setData(newData)
-            })
-    } ,[])
-
-    return data
-}
-
-
 function RoomList() {
 
     const rooms = useRooms();
-    const d = useData();
 
     return (
         <div>
@@ -56,7 +36,7 @@ function RoomList() {
                 <Card>
                     <CardContent>
                         <Typography align='center'>
-                            {room.id} has {room.numb} people
+                            {room.id} has {room.numPeople} people
                         </Typography>
                     </CardContent>
                 </Card>
