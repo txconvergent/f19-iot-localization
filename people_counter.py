@@ -196,7 +196,7 @@ while True:
     # draw a horizontal line in the center of the frame -- once an
     # object crosses this line we will determine whether they were
     # moving 'up' or 'down'
-    cv2.line(frame, (0, H // 2), (W, H // 2), (0, 255, 255), 2)
+    # cv2.line(frame, (0, H // 2), (W, H // 2), (0, 255, 255), 2)
 
     # use the centroid tracker to associate the (1) old object
     # centroids with (2) the newly computed object centroids
