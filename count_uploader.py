@@ -24,3 +24,4 @@ def print_db():
 
     for doc in docs:
         print(u'{} => {}'.format(doc.id, doc.to_dict()))
+        break
