@@ -1,15 +1,15 @@
 import firebase from 'firebase/app'
 import 'firebase/firestore'
 
-const firebaseConfig = {
-  apiKey: "AIzaSyCGMQpeff1oaGkghYbSx_fS6CvogUD4YuI",
-  authDomain: "iot-localization-412b8.firebaseapp.com",
-  databaseURL: "https://iot-localization-412b8.firebaseio.com",
-  projectId: "iot-localization-412b8",
-  storageBucket: "iot-localization-412b8.appspot.com",
-  messagingSenderId: "936875743999",
-  appId: "1:936875743999:web:227377bb7f1dcf5c944aca",
-  measurementId: "G-P6JCDBSHL5"
+var firebaseConfig = {
+  apiKey: "AIzaSyCcpxeOeVfiooiJYWv4pnioxRbbiVngeYQ",
+  authDomain: "roompop-f51d1.firebaseapp.com",
+  databaseURL: "https://roompop-f51d1.firebaseio.com",
+  projectId: "roompop-f51d1",
+  storageBucket: "roompop-f51d1.appspot.com",
+  messagingSenderId: "1009983531027",
+  appId: "1:1009983531027:web:7dfa7a7f53680da4c477e6",
+  measurementId: "G-FRSWMXWEDN"
 };
 
 firebase.initializeApp(firebaseConfig);
