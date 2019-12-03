@@ -261,8 +261,7 @@ while True:
     # construct a tuple of information we will be displaying on the
     # frame
     info = [
-        ("Up", totalUp),
-        ("Down", totalDown),
+        ("People", len(trackers)),
         ("Status", status),
     ]
 

@@ -9,13 +9,13 @@ cred = credentials.Certificate(service_key)
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
-users_ref = db.collection(u'roomPop1')
-doc_ref = users_ref.document(u'entered')
+users_ref = db.collection(u'rooms')
+doc_ref = users_ref.document(u'room1')
 
 
 def upload(n: int):
     doc_ref.set({
-        u'numb': n
+        u'numPeople': n
     })
 
 
